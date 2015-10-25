@@ -7,6 +7,7 @@ type sqls struct {
 	FIND_PLACE_ID       string
 	INSERT_TO_PLACE     string
 	SELECT_ALL_PLACES   string
+	SELECT_RECENT_TOP   string
 }
 
 func InitSQLS() sqls {
@@ -39,5 +40,11 @@ func InitSQLS() sqls {
 	s.INSERT_TO_PLACE = `INSERT INTO places(name, id) VALUES(?,?)`
 
 	s.SELECT_ALL_PLACES = `SELECT id,name,nick FROM places`
+
+	s.SELECT_RECENT_TOP = `select places.name, am from (
+		    	select place, sum(ammount) as am from records where sid=? and date >= '20151001' group by place
+		) stat
+		left join places on places.id= stat.place order by am;`
+
 	return s
 }

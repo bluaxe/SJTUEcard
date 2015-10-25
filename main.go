@@ -67,5 +67,8 @@ func main() {
 	}()
 	// dbtest()
 	// ecardtest()
+	psn := "axe:axe@tcp(neo.bile.dog:3306)/axe?charset=utf8"
+	persist.Init(psn)
+
 	servertest()
 }

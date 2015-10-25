@@ -11,6 +11,8 @@ var entrys map[string]handler = make(map[string]handler)
 func init() {
 	entrys["test"] = testfunc
 	entrys["chk"] = checkAccount
+	entrys["top"] = showRecentTop
+	entrys["fetch"] = fetchAllRecord
 }
 
 func testfunc(v url.Values, w http.ResponseWriter) {

@@ -1,6 +1,7 @@
 package persist
 
 import (
+	"bytes"
 	"database/sql"
 	"fmt"
 	"github.com/bluaxe/fetch/common"
@@ -45,7 +46,7 @@ func Test(dsn string) {
 
 }
 
-func GetDb() *sql.DB {
+func GetDefaultDB() *sql.DB {
 	return GetDB(default_dsn)
 }
 
@@ -150,4 +151,35 @@ func CreatePlaceTable(db *sql.DB) {
 	if err != nil {
 		fmt.Println(err)
 	}
+}
+
+func GetRecentTop(sid string) (res string) {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println(r)
+			res = ""
+		}
+	}()
+
+	db := GetDefaultDB()
+	defer ReleaseDB(db)
+
+	rows, err := db.Query(s.SELECT_RECENT_TOP, sid)
+	if err != nil {
+		panic(err)
+	}
+
+	var buffer bytes.Buffer
+
+	for rows.Next() {
+		var name string
+		var am float64
+		err := rows.Scan(&name, &am)
+		if err != nil {
+			panic(err)
+		}
+		buffer.WriteString(fmt.Sprintln(name, am))
+		// fmt.Println(name, am)
+	}
+	return buffer.String()
 }
