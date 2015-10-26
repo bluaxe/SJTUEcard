@@ -75,7 +75,7 @@ func Query(se *Session, start, end string) []common.Record {
 	}()
 
 	cid := initQuery(se)
-	fmt.Printf("Card ID:%q\n", cid)
+	// fmt.Printf("Card ID:%q\n", cid)
 
 	//Post Account
 	posturl := u.query + "?__continue=" + se.conti
@@ -167,7 +167,7 @@ func getCode(se *Session) string {
 	_, _ = conn.Read(reply)
 	res := string(reply)
 
-	fmt.Printf("code is :[" + res + "]\n")
+	// fmt.Printf("code is :[" + res + "]\n")
 
 	//writeFile("1.jpg", body)
 

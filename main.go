@@ -6,6 +6,8 @@ import (
 	"github.com/bluaxe/fetch/ecard"
 	"github.com/bluaxe/fetch/persist"
 	"github.com/bluaxe/fetch/server"
+	"github.com/bluaxe/fetch/service"
+	"time"
 )
 
 func ecardtest() {
@@ -67,8 +69,10 @@ func main() {
 	}()
 	// dbtest()
 	// ecardtest()
-	psn := "axe:axe@tcp(neo.bile.dog:3306)/axe?charset=utf8"
+	// servertest()
+	psn := "root:blue@tcp(axe.so:3306)/axe?charset=utf8"
 	persist.Init(psn)
 
-	servertest()
+	service.StartFetcher(time.Second * 30)
+	server.Start("0.0.0.0:8000")
 }
