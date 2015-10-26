@@ -2,7 +2,7 @@ package ecard
 
 import (
 	"fmt"
-	"github.com/bluaxe/fetch/common"
+	"github.com/bluaxe/SJTUEcard/common"
 	"io/ioutil"
 	"net"
 	"net/url"

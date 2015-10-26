@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/bluaxe/fetch/common"
-	"github.com/bluaxe/fetch/ecard"
-	"github.com/bluaxe/fetch/persist"
-	"github.com/bluaxe/fetch/server"
-	"github.com/bluaxe/fetch/service"
+	"github.com/bluaxe/SJTUEcard/common"
+	"github.com/bluaxe/SJTUEcard/ecard"
+	"github.com/bluaxe/SJTUEcard/persist"
+	"github.com/bluaxe/SJTUEcard/server"
+	"github.com/bluaxe/SJTUEcard/service"
 	"time"
 )
 

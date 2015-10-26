@@ -3,9 +3,9 @@ package service
 import (
 	// "database/sql"
 	"fmt"
-	"github.com/bluaxe/fetch/common"
-	"github.com/bluaxe/fetch/ecard"
-	"github.com/bluaxe/fetch/persist"
+	"github.com/bluaxe/SJTUEcard/common"
+	"github.com/bluaxe/SJTUEcard/ecard"
+	"github.com/bluaxe/SJTUEcard/persist"
 	"time"
 )
 

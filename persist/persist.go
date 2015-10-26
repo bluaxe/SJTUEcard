@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
-	"github.com/bluaxe/fetch/common"
+	"github.com/bluaxe/SJTUEcard/common"
 	_ "github.com/go-sql-driver/mysql"
 )
 

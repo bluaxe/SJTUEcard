@@ -3,7 +3,7 @@ package ecard
 import (
 	"fmt"
 	"github.com/axgle/mahonia"
-	"github.com/bluaxe/fetch/common"
+	"github.com/bluaxe/SJTUEcard/common"
 	"io/ioutil"
 	"net/http"
 	"os"
